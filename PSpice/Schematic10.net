@@ -1,0 +1,10 @@
+* Schematics Netlist *
+
+
+
+R_R2         Vin $N_0001  1k  
+R_R3         $N_0001 Vout  1k  
+D_D2         Vout $N_0002 D1N4002 
+V_V3         Vin 0  
++SIN 0 10 50 0 0 0
+V_V4         $N_0002 0 5V

@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+D_D1         Diode 0 D1N4002 
+V_V1         $N_0001 0 0V
+R_R1         $N_0001 Diode  100  

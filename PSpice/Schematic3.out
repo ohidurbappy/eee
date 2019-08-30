@@ -1,0 +1,113 @@
+
+**** 11/25/18 10:36:05 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic3.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Nov 25 10:36:05 2018
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic3.net"
+
+**** INCLUDING Schematic3.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 10V
+R_R1         $N_0001 $N_0002  100  
+R_R2         0 $N_0002  5  
+R_R3         0 $N_0003  5  
+V_V2         $N_0002 $N_0003 5V
+I_I1         $N_0003 0 DC 10A  
+
+**** RESUMING Schematic3.cir ****
+.INC "Schematic3.als"
+
+
+
+**** INCLUDING Schematic3.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=$N_0001 -=0 )
+R_R1            R1(1=$N_0001 2=$N_0002 )
+R_R2            R2(1=0 2=$N_0002 )
+R_R3            R3(1=0 2=$N_0003 )
+V_V2            V2(+=$N_0002 -=$N_0003 )
+I_I1            I1(+=$N_0003 -=0 )
+.ENDALIASES
+
+
+**** RESUMING Schematic3.cir ****
+.probe
+
+
+.END
+
+**** 11/25/18 10:36:05 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)   10.0000                   ($N_0002)  -21.7070                       
+
+($N_0003)  -26.7070                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -3.171E-01
+    V_V2         4.659E+00
+
+    TOTAL POWER DISSIPATION  -2.01E+01  WATTS
+
+
+**** 11/25/18 10:36:05 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

@@ -1,0 +1,144 @@
+
+**** 11/25/18 11:00:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Nov 25 11:00:00 2018
+
+
+
+** Analysis setup **
+.DC LIN V_V1 .5 20 1 
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic4.net"
+
+**** INCLUDING Schematic4.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 0V
+D_D1         Diode 0 D1N4002 
+R_R1         $N_0001 Diode  100  
+
+**** RESUMING Schematic4.cir ****
+.INC "Schematic4.als"
+
+
+
+**** INCLUDING Schematic4.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=$N_0001 -=0 )
+D_D1            D1(1=Diode 2=0 )
+R_R1            R1(1=$N_0001 2=Diode )
+_    _(Diode=Diode)
+.ENDALIASES
+
+
+**** RESUMING Schematic4.cir ****
+.probe
+
+
+.END
+
+**** 11/25/18 11:00:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic4.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         
+          IS   14.110000E-09 
+           N    1.984        
+         ISR  100.000000E-12 
+         IKF   94.81         
+          BV  100.1          
+         IBV   10            
+          RS     .03389      
+          TT    4.761000E-06 
+         CJO   51.170000E-12 
+          VJ     .3905       
+           M     .2762       
+
+
+**** 11/25/18 11:00:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic4.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(Diode) 24.68E-24  ($N_0001)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.468E-25
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 11/25/18 11:00:00 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic4.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1      
+MODEL        D1N4002   
+ID           0.00E+00 
+VD           2.47E-23 
+REQ          3.61E+06 
+CAP          5.25E-11 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .75
+

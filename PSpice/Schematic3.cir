@@ -1,0 +1,22 @@
+* C:\Users\Bappy\Desktop\PSpiceSchematics\Schematic3.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sun Nov 25 10:36:05 2018
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic3.net"
+.INC "Schematic3.als"
+
+
+.probe
+
+
+.END
