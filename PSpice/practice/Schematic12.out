@@ -1,0 +1,127 @@
+
+**** 07/25/18 23:37:29 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\Schematic12.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Jul 25 23:37:24 2018
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic12.net"
+
+**** INCLUDING Schematic12.net ****
+* Schematics Netlist *
+
+
+
+F_F1         $N_0001 a VF_F1 1
+VF_F1        a b 0V
+V_V1         $N_0002 0 10
+R_R1         $N_0002 b  8  
+R_R4         5 a  16  
+R_R3         0 5  4  
+R_R5         0 $N_0003  8  
+R_R6         $N_0001 $N_0003  20  
+
+**** RESUMING Schematic12.cir ****
+.INC "Schematic12.als"
+
+
+
+**** INCLUDING Schematic12.als ****
+* Schematics Aliases *
+
+.ALIASES
+F_F1            F1(3=$N_0001 4=a )
+VF_F1           F1(1=a 2=b )
+V_V1            V1(+=$N_0002 -=0 )
+R_R1            R1(1=$N_0002 2=b )
+R_R4            R4(1=5 2=a )
+R_R3            R3(1=0 2=5 )
+R_R5            R5(1=0 2=$N_0003 )
+R_R6            R6(1=$N_0001 2=$N_0003 )
+_    _(a=a)
+_    _(b=b)
+_    _(5=5)
+.ENDALIASES
+
+
+**** RESUMING Schematic12.cir ****
+.probe
+
+
+.END
+
+**** 07/25/18 23:37:29 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\Schematic12.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    5) 140.0E-12  (    a) 700.0E-12  (    b) 700.0E-12  ($N_0001)   35.0000    
+
+($N_0002)   10.0000                   ($N_0003)   10.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    VF_F1       -1.250E+00
+    V_V1        -1.250E+00
+
+    TOTAL POWER DISSIPATION   1.25E+01  WATTS
+
+
+**** 07/25/18 23:37:29 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\Schematic12.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         F_F1      
+I-SOURCE    -1.250E+00
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

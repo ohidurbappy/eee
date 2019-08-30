@@ -1,0 +1,306 @@
+
+**** 08/06/18 14:08:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\differentiator.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon Aug 06 14:08:22 2018
+
+
+
+** Analysis setup **
+.tran 1s 10s
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "differentiator.net"
+
+**** INCLUDING differentiator.net ****
+* Schematics Netlist *
+
+
+
+V_V2         $N_0001 0 20
+V_V4         0 $N_0002 20
+X_U1         $N_0003 $N_0004 $N_0001 $N_0002 output uA741
+R_R4         0 $N_0003  500k  
+R_R2         input $N_0007  10k  
+V_V7         input 0  
++SIN 0 10 2 0 0 0
+C_C1         $N_0007 $N_0004  2uf  
+R_R1         $N_0004 output  100k  
+
+**** RESUMING differentiator.cir ****
+.INC "differentiator.als"
+
+
+
+**** INCLUDING differentiator.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V2            V2(+=$N_0001 -=0 )
+V_V4            V4(+=0 -=$N_0002 )
+X_U1            U1(+=$N_0003 -=$N_0004 V+=$N_0001 V-=$N_0002 OUT=output )
+R_R4            R4(1=0 2=$N_0003 )
+R_R2            R2(1=input 2=$N_0007 )
+V_V7            V7(+=input -=0 )
+C_C1            C1(1=$N_0007 2=$N_0004 )
+R_R1            R1(1=$N_0004 2=output )
+_    _(output=output)
+_    _(input=input)
+.ENDALIASES
+
+
+**** RESUMING differentiator.cir ****
+.probe
+
+
+.END
+
+**** 08/06/18 14:08:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\differentiator.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 08/06/18 14:08:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\differentiator.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         
+               NPN             
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/06/18 14:08:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\differentiator.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(input)    0.0000  (output)    -.0319 (X_U1.6) 3.007E-06 (X_U1.7)    -.0319     
+
+(X_U1.8)    -.0319 (X_U1.9)    0.0000 ($N_0001)   20.0000                       
+
+($N_0002)  -20.0000                   ($N_0003)    -.0399                       
+
+($N_0004)    -.0398                   ($N_0007)    0.0000                       
+
+(X_U1.10)    -.6475                   (X_U1.11)   19.9600                       
+
+(X_U1.12)   19.9600                   (X_U1.13)    -.6336                       
+
+(X_U1.14)    -.6336                   (X_U1.53)   19.0000                       
+
+(X_U1.54)  -19.0000                   (X_U1.90) 79.70E-06                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -2.218E-03
+    V_V4        -2.218E-03
+    V_V7         0.000E+00
+    X_U1.vb      3.007E-11
+    X_U1.vc      1.903E-11
+    X_U1.ve      1.897E-11
+    X_U1.vlim    7.970E-08
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   8.87E-02  WATTS
+
+
+**** 08/06/18 14:08:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\differentiator.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.ga     X_U1.gcm  
+I-SOURCE    -3.890E-09  -3.860E-09
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.egnd 
+V-SOURCE     0.000E+00
+I-SOURCE    -1.308E-07
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.fb   
+I-SOURCE     3.182E-04
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.hlim 
+V-SOURCE     7.970E-05
+I-SOURCE    -1.594E-16
+
+
+**** DIODES
+
+
+NAME         X_U1.dc     X_U1.de     X_U1.dlp    X_U1.dln    X_U1.dp   
+MODEL        X_U1.dx     X_U1.dx     X_U1.dx     X_U1.dx     X_U1.dx   
+ID          -1.90E-11   -1.90E-11   -4.00E-11   -4.00E-11   -4.00E-11 
+VD          -1.90E+01   -1.90E+01   -4.00E+01   -4.00E+01   -4.00E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U1.q1     X_U1.q2   
+MODEL        X_U1.qx     X_U1.qx   
+IB           7.97E-08    7.97E-08 
+IC           7.48E-06    7.47E-06 
+VBE          5.94E-01    5.94E-01 
+VBC         -2.00E+01   -2.00E+01 
+VCE          2.06E+01    2.06E+01 
+BETADC       9.38E+01    9.38E+01 
+GM           2.89E-04    2.89E-04 
+RPI          3.24E+05    3.24E+05 
+RX           0.00E+00    0.00E+00 
+RO           1.00E+12    1.00E+12 
+CBE          0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00 
+BETAAC       9.38E+01    9.38E+01 
+CBX/CBX2     0.00E+00    0.00E+00 
+FT/FT2       4.60E+15    4.60E+15 
+
+
+**** 08/06/18 14:08:26 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\differentiator.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(input)    0.0000  (output)    -.0319 (X_U1.6) 3.007E-06 (X_U1.7)    -.0319     
+
+(X_U1.8)    -.0319 (X_U1.9)    0.0000 ($N_0001)   20.0000                       
+
+($N_0002)  -20.0000                   ($N_0003)    -.0399                       
+
+($N_0004)    -.0398                   ($N_0007)    0.0000                       
+
+(X_U1.10)    -.6475                   (X_U1.11)   19.9600                       
+
+(X_U1.12)   19.9600                   (X_U1.13)    -.6336                       
+
+(X_U1.14)    -.6336                   (X_U1.53)   19.0000                       
+
+(X_U1.54)  -19.0000                   (X_U1.90) 79.74E-06                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -2.218E-03
+    V_V4        -2.218E-03
+    V_V7         0.000E+00
+    X_U1.vb      3.007E-11
+    X_U1.vc      1.903E-11
+    X_U1.ve      1.897E-11
+    X_U1.vlim    7.974E-08
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   8.87E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .25
+

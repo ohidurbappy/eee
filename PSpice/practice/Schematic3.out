@@ -1,0 +1,110 @@
+
+**** 07/17/18 09:13:23 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic3.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Jul 17 09:12:08 2018
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic3.net"
+
+**** INCLUDING Schematic3.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 20V
+R_Ra         $N_0001 $N_0002  5k  
+R_Rc         0 $N_0003  1k  
+I_Is         $N_0003 $N_0002 DC 2mA  
+R_Rb         0 $N_0002  4k  
+
+**** RESUMING Schematic3.cir ****
+.INC "Schematic3.als"
+
+
+
+**** INCLUDING Schematic3.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=$N_0001 -=0 )
+R_Ra            Ra(1=$N_0001 2=$N_0002 )
+R_Rc            Rc(1=0 2=$N_0003 )
+I_Is            Is(+=$N_0003 -=$N_0002 )
+R_Rb            Rb(1=0 2=$N_0002 )
+.ENDALIASES
+
+
+**** RESUMING Schematic3.cir ****
+.probe
+
+
+.END
+
+**** 07/17/18 09:13:23 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)   20.0000                   ($N_0002)   13.3330                       
+
+($N_0003)   -2.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.333E-03
+
+    TOTAL POWER DISSIPATION   2.67E-02  WATTS
+
+
+**** 07/17/18 09:13:23 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

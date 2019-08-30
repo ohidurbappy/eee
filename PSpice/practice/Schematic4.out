@@ -1,0 +1,117 @@
+
+**** 07/17/18 09:57:46 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Jul 17 09:57:42 2018
+
+
+
+** Analysis setup **
+.DC LIN V_V1 0V 10V 2 
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic4.net"
+
+**** INCLUDING Schematic4.net ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  3ohm  
+R_R2         $N_0002 $N_0003  4ohm  
+R_R4         $N_0001 $N_0003  7ohm  
+I_I2         $N_0003 0 DC -25A  
+R_R3         0 $N_0001  1ohm  
+R_R5         0 $N_0003  5ohm  
+V_V1         $N_0002 0 0V
+I_I1         $N_0002 $N_0001 DC 3A  
+
+**** RESUMING Schematic4.cir ****
+.INC "Schematic4.als"
+
+
+
+**** INCLUDING Schematic4.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=$N_0002 2=$N_0001 )
+R_R2            R2(1=$N_0002 2=$N_0003 )
+R_R4            R4(1=$N_0001 2=$N_0003 )
+I_I2            I2(+=$N_0003 -=0 )
+R_R3            R3(1=0 2=$N_0001 )
+R_R5            R5(1=0 2=$N_0003 )
+V_V1            V1(+=$N_0002 -=0 )
+I_I1            I1(+=$N_0002 -=$N_0001 )
+.ENDALIASES
+
+
+**** RESUMING Schematic4.cir ****
+.probe
+
+
+.END
+
+**** 07/17/18 09:57:46 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic4.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    6.2591                   ($N_0002)    0.0000                       
+
+($N_0003)   43.6770                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.001E+01
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/17/18 09:57:46 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic4.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

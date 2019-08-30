@@ -1,0 +1,12 @@
+* Schematics Netlist *
+
+
+
+F_F1         $N_0001 a VF_F1 1
+VF_F1        a b 0V
+V_V1         $N_0002 0 10
+R_R1         $N_0002 b  8  
+R_R4         5 a  16  
+R_R3         0 5  4  
+R_R5         0 $N_0003  8  
+R_R6         $N_0001 $N_0003  20  

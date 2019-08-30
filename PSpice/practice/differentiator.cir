@@ -1,0 +1,23 @@
+* C:\Users\Bappy\Desktop\Schematic\differentiator.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Mon Aug 06 14:08:22 2018
+
+
+
+** Analysis setup **
+.tran 1s 10s
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "differentiator.net"
+.INC "differentiator.als"
+
+
+.probe
+
+
+.END

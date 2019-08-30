@@ -1,0 +1,12 @@
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  3ohm  
+R_R2         $N_0002 $N_0003  4ohm  
+R_R4         $N_0001 $N_0003  7ohm  
+I_I2         $N_0003 0 DC -25A  
+R_R3         0 $N_0001  1ohm  
+R_R5         0 $N_0003  5ohm  
+V_V1         $N_0002 0 0V
+I_I1         $N_0002 $N_0001 DC 3A  

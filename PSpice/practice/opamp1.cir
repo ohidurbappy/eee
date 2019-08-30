@@ -1,0 +1,23 @@
+* C:\Users\Bappy\Desktop\Schematic\opamp1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Mon Aug 06 12:38:18 2018
+
+
+
+** Analysis setup **
+.tran 1ms .1s
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "opamp1.net"
+.INC "opamp1.als"
+
+
+.probe
+
+
+.END

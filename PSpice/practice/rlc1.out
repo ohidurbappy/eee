@@ -1,0 +1,140 @@
+
+**** 07/31/18 12:03:38 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\rlc1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Jul 31 12:03:34 2018
+
+
+
+** Analysis setup **
+.tran 1ms .1s
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "rlc1.net"
+
+**** INCLUDING rlc1.net ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  1k  
+L_L1         $N_0001 $N_0003  10H  
+C_C2         0 $N_0003  1uf  
+V_V2         $N_0002 0 DC 0 
++SIN 0 20 50 0 0 0
+
+**** RESUMING rlc1.cir ****
+.INC "rlc1.als"
+
+
+
+**** INCLUDING rlc1.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=$N_0002 2=$N_0001 )
+L_L1            L1(1=$N_0001 2=$N_0003 )
+C_C2            C2(1=0 2=$N_0003 )
+V_V2            V2(+=$N_0002 -=0 )
+.ENDALIASES
+
+
+**** RESUMING rlc1.cir ****
+.probe
+
+
+.END
+
+**** 07/31/18 12:03:38 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\rlc1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/31/18 12:03:38 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\rlc1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+**** 07/31/18 12:03:38 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\rlc1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

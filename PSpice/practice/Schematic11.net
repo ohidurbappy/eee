@@ -1,0 +1,15 @@
+* Schematics Netlist *
+
+
+
+V_V1         x a 20V
+V_V2         $N_0001 $N_0002 10V
+R_R1         x $N_0001  20  
+R_R2         0 $N_0002  5  
+R_R4         0 $N_0003  10  
+R_R5         $N_0003 $N_0004  50  
+R_R3         a 0  30  
+H_H1         $N_0003 0 VH_H1 1
+VH_H1        x 0 0V
+G_G1         $N_0001 $N_0004 a 0 1
+R_R6         x 0  50  

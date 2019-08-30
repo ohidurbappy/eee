@@ -1,0 +1,23 @@
+* C:\Users\Bappy\Desktop\Schematic\Schematic11.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Jul 25 22:33:22 2018
+
+
+
+** Analysis setup **
+.OP 
+.STMLIB "Schematic11.stl"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic11.sub"
+.INC "Schematic11.als"
+
+
+.probe
+
+
+.END

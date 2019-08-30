@@ -1,0 +1,298 @@
+
+**** 08/06/18 12:38:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\opamp1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Mon Aug 06 12:38:18 2018
+
+
+
+** Analysis setup **
+.tran 1ms .1s
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "opamp1.net"
+
+**** INCLUDING opamp1.net ****
+* Schematics Netlist *
+
+
+
+X_U1         0 $N_0001 $N_0002 $N_0003 output uA741
+V_V3         $N_0002 0 20
+V_V2         0 $N_0003 20v
+R_R1         input $N_0001  1k  
+C_C1         $N_0001 output  0.8uf  
+V_V1         input 0 DC 0 
++PULSE -1 1 0 1ns 1ns 10ms 20ms
+
+**** RESUMING opamp1.cir ****
+.INC "opamp1.als"
+
+
+
+**** INCLUDING opamp1.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U1            U1(+=0 -=$N_0001 V+=$N_0002 V-=$N_0003 OUT=output )
+V_V3            V3(+=$N_0002 -=0 )
+V_V2            V2(+=0 -=$N_0003 )
+R_R1            R1(1=input 2=$N_0001 )
+C_C1            C1(1=$N_0001 2=output )
+V_V1            V1(+=input -=0 )
+_    _(output=output)
+_    _(input=input)
+.ENDALIASES
+
+
+**** RESUMING opamp1.cir ****
+.probe
+
+
+.END
+
+**** 08/06/18 12:38:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\opamp1.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 08/06/18 12:38:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\opamp1.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         
+               NPN             
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/06/18 12:38:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\opamp1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(input)    0.0000  (output)   19.3370 (X_U1.6)    -.0019 (X_U1.7)   19.3370     
+
+(X_U1.8)   19.3370 (X_U1.9)    0.0000 ($N_0001)-79.66E-06                       
+
+($N_0002)   20.0000                   ($N_0003)  -20.0000                       
+
+(X_U1.10)    -.6077                   (X_U1.11)   19.9600                       
+
+(X_U1.12)   19.9600                   (X_U1.13)    -.5939                       
+
+(X_U1.14)    -.5938                   (X_U1.53)   19.0000                       
+
+(X_U1.54)  -19.0000                   (X_U1.90) 238.8E-06                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -2.218E-03
+    V_V2        -2.218E-03
+    V_V1        -7.966E-08
+    X_U1.vb     -1.861E-08
+    X_U1.vc     -3.701E-10
+    X_U1.ve      3.834E-11
+    X_U1.vlim    2.388E-07
+    X_U1.vlp    -4.000E-11
+    X_U1.vln    -4.000E-11
+
+    TOTAL POWER DISSIPATION   8.87E-02  WATTS
+
+
+**** 08/06/18 12:38:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\opamp1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.ga     X_U1.gcm  
+I-SOURCE     1.499E-08  -3.623E-09
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.egnd 
+V-SOURCE     0.000E+00
+I-SOURCE    -2.814E-07
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.fb   
+I-SOURCE    -1.934E-01
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.hlim 
+V-SOURCE     2.388E-04
+I-SOURCE    -4.777E-16
+
+
+**** DIODES
+
+
+NAME         X_U1.dc     X_U1.de     X_U1.dlp    X_U1.dln    X_U1.dp   
+MODEL        X_U1.dx     X_U1.dx     X_U1.dx     X_U1.dx     X_U1.dx   
+ID           3.70E-10   -3.83E-11   -4.00E-11   -4.00E-11   -4.00E-11 
+VD           3.37E-01   -3.83E+01   -4.00E+01   -4.00E+01   -4.00E+01 
+REQ          6.99E+07    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U1.q1     X_U1.q2   
+MODEL        X_U1.qx     X_U1.qx   
+IB           7.97E-08    7.98E-08 
+IC           7.47E-06    7.48E-06 
+VBE          5.94E-01    5.94E-01 
+VBC         -2.00E+01   -2.00E+01 
+VCE          2.06E+01    2.06E+01 
+BETADC       9.38E+01    9.38E+01 
+GM           2.89E-04    2.89E-04 
+RPI          3.25E+05    3.24E+05 
+RX           0.00E+00    0.00E+00 
+RO           1.00E+12    1.00E+12 
+CBE          0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00 
+BETAAC       9.38E+01    9.38E+01 
+CBX/CBX2     0.00E+00    0.00E+00 
+FT/FT2       4.60E+15    4.61E+15 
+
+
+**** 08/06/18 12:38:22 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\opamp1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(input)   -1.0000  (output)   19.6130 (X_U1.6)   -1.4956 (X_U1.7)   19.6140     
+
+(X_U1.8)   19.6140 (X_U1.9)    0.0000 ($N_0001)   -1.0000                       
+
+($N_0002)   20.0000                   ($N_0003)  -20.0000                       
+
+(X_U1.10)    -.6395                   (X_U1.11)   20.0000                       
+
+(X_U1.12)   19.9210                   (X_U1.13)    -.6395                       
+
+(X_U1.14)    -.6117                   (X_U1.53)   19.0000                       
+
+(X_U1.54)  -19.0000                   (X_U1.90)     .0158                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -2.202E-03
+    V_V2        -2.218E-03
+    V_V1         2.100E-11
+    X_U1.vb     -1.496E-05
+    X_U1.vc     -1.585E-05
+    X_U1.ve      3.861E-11
+    X_U1.vlim    1.585E-05
+    X_U1.vlp    -3.999E-11
+    X_U1.vln    -4.002E-11
+
+    TOTAL POWER DISSIPATION   8.84E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .16
+

@@ -1,0 +1,145 @@
+
+**** 07/25/18 22:32:59 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\Schematic11.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Wed Jul 25 22:32:37 2018
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic11.net"
+
+**** INCLUDING Schematic11.net ****
+* Schematics Netlist *
+
+
+
+V_V1         x a 20V
+V_V2         $N_0001 $N_0002 10V
+R_R1         x $N_0001  20  
+R_R2         0 $N_0002  5  
+R_R4         0 $N_0003  10  
+R_R5         $N_0003 $N_0004  50  
+R_R3         a 0  30  
+H_H1         $N_0003 0 VH_H1 1
+VH_H1        x 0 0V
+G_G1         $N_0001 $N_0004 a 0 1
+R_R6         x 0  50  
+
+**** RESUMING Schematic11.cir ****
+.INC "Schematic11.als"
+
+
+
+**** INCLUDING Schematic11.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=x -=a )
+V_V2            V2(+=$N_0001 -=$N_0002 )
+R_R1            R1(1=x 2=$N_0001 )
+R_R2            R2(1=0 2=$N_0002 )
+R_R4            R4(1=0 2=$N_0003 )
+R_R5            R5(1=$N_0003 2=$N_0004 )
+R_R3            R3(1=a 2=0 )
+H_H1            H1(3=$N_0003 4=0 )
+VH_H1           H1(1=x 2=0 )
+G_G1            G1(3=$N_0001 4=$N_0004 1=a 2=0 )
+R_R6            R6(1=x 2=0 )
+_    _(x=x)
+_    _(a=a)
+_    _(y=0)
+_    _(b=0)
+.ENDALIASES
+
+
+**** RESUMING Schematic11.cir ****
+.probe
+
+
+.END
+
+**** 07/25/18 22:32:59 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\Schematic11.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    a)  -20.0000  (    x)    0.0000  ($N_0001)   88.0000                       
+
+($N_0002)   78.0000                   ($N_0003)    5.0667                       
+
+($N_0004) -994.9300                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.667E-01
+    V_V2         1.560E+01
+    VH_H1        5.067E+00
+
+    TOTAL POWER DISSIPATION  -1.43E+02  WATTS
+
+
+**** 07/25/18 22:32:59 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic\Schematic11.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         G_G1      
+I-SOURCE    -2.000E+01
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         H_H1      
+V-SOURCE     5.067E+00
+I-SOURCE    -2.051E+01
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

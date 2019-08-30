@@ -1,0 +1,114 @@
+
+**** 07/17/18 10:05:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic5.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Jul 17 10:05:18 2018
+
+
+
+** Analysis setup **
+.DC LIN V_V1 1V 10V 2 
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic5.net"
+
+**** INCLUDING Schematic5.net ****
+* Schematics Netlist *
+
+
+
+I_I1         0 $N_0001 DC 1A  
+V_V1         $N_0001 $N_0002 6V
+R_R2         0 $N_0002  5ohm  
+V_V2         $N_0003 0 2V
+R_R1         $N_0002 $N_0003  7ohm  
+R_R3         0 $N_0001  10ohm  
+
+**** RESUMING Schematic5.cir ****
+.INC "Schematic5.als"
+
+
+
+**** INCLUDING Schematic5.als ****
+* Schematics Aliases *
+
+.ALIASES
+I_I1            I1(+=0 -=$N_0001 )
+V_V1            V1(+=$N_0001 -=$N_0002 )
+R_R2            R2(1=0 2=$N_0002 )
+V_V2            V2(+=$N_0003 -=0 )
+R_R1            R1(1=$N_0002 2=$N_0003 )
+R_R3            R3(1=0 2=$N_0001 )
+.ENDALIASES
+
+
+**** RESUMING Schematic5.cir ****
+.probe
+
+
+.END
+
+**** 07/17/18 10:05:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic5.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    7.5484                   ($N_0002)    1.5484                       
+
+($N_0003)    2.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.452E-01
+    V_V2        -6.452E-02
+
+    TOTAL POWER DISSIPATION  -1.34E+00  WATTS
+
+
+**** 07/17/18 10:05:21 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic5.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

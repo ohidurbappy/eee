@@ -1,0 +1,108 @@
+
+**** 07/17/18 08:59:59 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Jul 17 08:58:54 2018
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Schematic2.net"
+
+**** INCLUDING Schematic2.net ****
+* Schematics Netlist *
+
+
+
+I_I1         $N_0001 0 DC 1A  
+V_V1         $N_0001 $N_0002 6V
+R_R2         0 $N_0002  5ohm  
+R_R3         0 $N_0001  10ohm  
+R_R1         $N_0002 0  70ohm  
+
+**** RESUMING Schematic2.cir ****
+.INC "Schematic2.als"
+
+
+
+**** INCLUDING Schematic2.als ****
+* Schematics Aliases *
+
+.ALIASES
+I_I1            I1(+=$N_0001 -=0 )
+V_V1            V1(+=$N_0001 -=$N_0002 )
+R_R2            R2(1=0 2=$N_0002 )
+R_R3            R3(1=0 2=$N_0001 )
+R_R1            R1(1=$N_0002 2=0 )
+.ENDALIASES
+
+
+**** RESUMING Schematic2.cir ****
+.probe
+
+
+.END
+
+**** 07/17/18 08:59:59 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)     .9091                   ($N_0002)   -5.0909                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.091E+00
+
+    TOTAL POWER DISSIPATION   6.55E+00  WATTS
+
+
+**** 07/17/18 08:59:59 *********** Evaluation PSpice (Nov 1999) **************
+
+ * C:\Users\Bappy\Desktop\Schematic2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            0.00
+

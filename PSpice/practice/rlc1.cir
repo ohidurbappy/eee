@@ -1,0 +1,23 @@
+* C:\Users\Bappy\Desktop\Schematic\rlc1.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Tue Jul 31 12:03:34 2018
+
+
+
+** Analysis setup **
+.tran 1ms .1s
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "rlc1.net"
+.INC "rlc1.als"
+
+
+.probe
+
+
+.END
