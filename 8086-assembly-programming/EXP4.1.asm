@@ -1,0 +1,20 @@
+
+org 100h
+
+.DATA
+.CODE
+XOR AX,AX
+MOV CX,16
+MOV BX,1652H
+TOP:
+ROL BX,1
+JNC NEXT
+INC AX
+NEXT:
+LOOP TOP 
+
+ret
+
+
+
+

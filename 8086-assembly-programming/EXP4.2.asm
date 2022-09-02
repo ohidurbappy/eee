@@ -1,0 +1,18 @@
+
+org 100h
+
+.DATA
+.CODE
+MOV CX,16
+REVERSE:
+SHL AX,1
+RCR BX,1
+LOOP REVERSE
+MOV AL,BL
+HLT
+
+ret
+
+
+
+

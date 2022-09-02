@@ -1,0 +1,22 @@
+org 100h
+.DATA
+A DW 2376H
+B DW 1224H
+C DW 0A2C1H
+.CODE
+MAIN PROC
+    ADD A,2H
+    MOV AX,A
+    DEC B
+    MOV BX,B
+    ADD BX,B
+    ADD BX,B
+    SUB AX,BX
+    INC C
+    ADD AX,C
+    ADD AX,C
+    ADD AX,AX
+    NEG AX
+    MOV A,AX
+    MAIN ENDP
+END MAIN

@@ -1,0 +1,24 @@
+
+org 100h
+
+MOV AX,25H
+MOV BX,12H
+ 
+
+NEXT:XOR DX,DX
+ADD AX,25H
+MOV CX,AX 
+
+DIV BX
+ 
+MOV AX,CX
+CMP DX,0H
+
+JNZ NEXT
+HLT
+
+ret
+
+
+
+

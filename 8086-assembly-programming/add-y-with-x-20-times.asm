@@ -1,0 +1,15 @@
+org 100h
+.DATA
+X DW 1075H
+Y DW 470AH
+.CODE
+MAIN PROC 
+    MOV CX,20
+    
+    SUM:
+    ADD X,Y
+    MOV AX,X
+    LOOP SUM
+    MAIN ENDP
+END MAIN
+    
